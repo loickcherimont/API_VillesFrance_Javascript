@@ -24,12 +24,23 @@ start index.html
 1. Télécharger le projet en utilisant le bouton `Code` et le dézipper dans un espace de travail
 2. Cliquer sur le dossier proposé et lancer le fichier `index.html`
 
-## :pencil2: À faire
-- [ ] Traiter les doublons (Saint-Denis), créer de nouvelles cartes d'informations pour chacun
+## Améliorations et corrections
+
+### API en elle-même :gear:
+- [x] Traiter les doublons (Saint-Denis), créer de nouvelles cartes d'informations pour chacun
+- [ ] Afficher un message d'erreur si le serveur est indisponible
+- [ ] Sécuriser l'API contre les malfaiteurs (Injection code, etc)
+- [ ] Permettre à l'utilisateur d'entrer des valeurs sans accents
+- [ ] Si en France, afficher par défaut la ville de l'utilisateur
+
+### Donnons lui du beau :sparkles:
 - [ ] Formater l'affichage des **codes postaux**
 - [x] Afficher message d'erreur si nom de ville non identifiée/vide
 - [x] Rendre le formulaire case-insensitive
 - [x] Préparer la requête avant soumission (trim, ...)
+- [ ] Afficher les villes en grille (Flexbox) en gardant les résultats au-dessus
+
+### Structurer le code
 - [ ] Scinder la fonction `getCityInformations` en d'autres fonctions (trop de logiques!)
 
 ## :construction_worker: Développeur
