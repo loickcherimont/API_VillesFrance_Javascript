@@ -21,3 +21,7 @@ export function countResults() {
     document.getElementById('results').prepend(resultsIndicator);
 
 }
+
+export function clearPreviousResults() {
+    document.getElementById('results').innerHTML = null;
+}
