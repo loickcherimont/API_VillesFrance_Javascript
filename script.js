@@ -1,4 +1,4 @@
-import { fetchFranceCities } from "./utils/functions.js";
+import { clearPreviousResults, countResults, fetchFranceCities } from "./utils/functions.js";
 
 // GLOBAL
 const emptyError = document.querySelector('#error');
@@ -12,14 +12,15 @@ document.getElementById('form')
 function getCityInformations(e) {
     e.preventDefault();
 
+    clearPreviousResults();
+
+    // PROCESS
+    // Clean user request
     const userRequestCity = document.getElementById('userRequestCity').value.trim();
 
     checkIfEmpty(userRequestCity);
 
     checkIfValid(userRequestCity);
-
-    // console.log(onlyNames);
-    // return;
 
     // Display requested city and its informations
     cities.forEach(city => {
@@ -27,13 +28,22 @@ function getCityInformations(e) {
         let caseInsensitiveCity = city['nom'].toLowerCase();
 
         if(caseInsensitiveCity === userRequestCity.toLowerCase()) {
-            document.getElementById('cityName').innerText = city['nom'];
-            document.getElementById('cityDepartmentCode').innerText = city['codeDepartement'];
-            document.getElementById('cityPopulation').innerText = city['population'];
-            document.getElementById('cityZips').innerText = city['codesPostaux'];
+            let cityCardTemplate = document.getElementById('cardLayout').content.cloneNode(true);
+            let cityCard = cityCardTemplate.querySelector('.card');
+
+            cityCard.querySelector('#cityName').innerText = city['nom'];
+            cityCard.querySelector('#cityDepartmentCode').innerText = city['codeDepartement'];
+            cityCard.querySelector('#cityPopulation').innerText = city['population'];
+            cityCard.querySelector('#cityZips').innerText = city['codesPostaux'];
+
+            document.querySelector('#results').append(cityCard);
+
+            // Debug: 
             console.log(city);
         }
     })
+
+    countResults();
 
     this.reset();
 
