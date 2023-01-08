@@ -1,7 +1,7 @@
 export async function fetchFranceCities(url) {
     const response = await fetch(url);
     if(!response.ok) {
-        throw new Error('Error', response.status);
+        return `Status: ${response.status}`;
     }
 
     return response.json();
