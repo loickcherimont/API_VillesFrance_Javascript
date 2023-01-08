@@ -28,10 +28,11 @@ start index.html
 
 ### API en elle-même :gear:
 - [x] Traiter les doublons (Saint-Denis), créer de nouvelles cartes d'informations pour chacun
-- [ ] Afficher un message d'erreur si le serveur est indisponible
+- [ ] Si en France, afficher par défaut la ville de l'utilisateur
+
+#### Prioritaires :warning:
 - [ ] Sécuriser l'API contre les malfaiteurs (Injection code, etc)
 - [ ] Permettre à l'utilisateur d'entrer des valeurs sans accents
-- [ ] Si en France, afficher par défaut la ville de l'utilisateur
 
 ### Donnons lui du beau :sparkles:
 - [ ] Formater l'affichage des **codes postaux**
