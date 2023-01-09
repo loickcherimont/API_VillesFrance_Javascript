@@ -18,9 +18,14 @@ function process(cities) {
                 
                     // PROCESS
                     // Clean user request
-                    const userRequestCity = document.getElementById('userRequestCity').value.trim();
+                    let userRequestCity = document.getElementById('userRequestCity').value.trim();
 
-                    prepareUserRequest(userRequestCity, cities);
+                    userRequestCity = controlEntry(userRequestCity, cities);
+
+                    if(!userRequestCity) {
+                        e.currentTarget.reset();
+                        return;
+                    }
                 
                     // Display requested city and its informations
                     cities.forEach(city => {
@@ -46,7 +51,7 @@ function process(cities) {
             });
 }
 
-function prepareUserRequest(userRequestCity, cities) {
+function controlEntry(userRequestCity, cities) {
 
     let onlyNames = [];
     const emptyError = document.querySelector('#error');
@@ -55,7 +60,7 @@ function prepareUserRequest(userRequestCity, cities) {
     // to display error message
     if (!userRequestCity) {
         emptyError.classList.remove('d-none');
-        return;
+        return userRequestCity
     } else {
         emptyError.classList.add('d-none');
     }
@@ -70,8 +75,9 @@ function prepareUserRequest(userRequestCity, cities) {
 
     if (onlyNames.indexOf(userRequestCity.toLowerCase()) === -1) {
         emptyError.classList.remove('d-none');
-        return;
+        return null
     }
 
     emptyError.classList.add('d-none');
+    return userRequestCity;
 }
