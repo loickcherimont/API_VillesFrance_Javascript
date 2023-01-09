@@ -1,5 +1,6 @@
-export async function fetchFranceCities(url) {
-    const response = await fetch(url);
+export async function fetchFranceCities(url, options={}) {
+    const headers = {Accept: 'application/json', ...options.headers};
+    const response = await fetch(url, {...options, headers});
     if(!response.ok) {
         return `Status: ${response.status}`;
     }
