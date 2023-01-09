@@ -11,7 +11,7 @@ API récupérant les données sur la ville demandée par l'utilisateur.
 ## :inbox_tray: Installation
 ### Avec Terminal (Shell Bash) et Git 
 1. Lancer votre terminal
-2. Récupérer le projet avec dans votre espace de travail avec la commande suivante:
+2. Récupérer le projet dans votre espace de travail avec la commande suivante:
 ```bash
 git clone https://github.com/loickcherimont/API_VillesFrance_Javascript
 ```
@@ -25,13 +25,13 @@ start index.html
 2. Cliquer sur le dossier proposé et lancer le fichier `index.html`
 
 ## Améliorations et corrections
-
+<!-- AVIS DE CHANGEMENT DE PROJET : Ne plus ajouter de tâches, les terminer! -->
 ### API en elle-même :gear:
 - [x] Traiter les doublons (Saint-Denis), créer de nouvelles cartes d'informations pour chacun
 - [ ] Si en France, afficher par défaut la ville de l'utilisateur
 
 #### Prioritaires :warning:
-- [ ] Sécuriser l'API contre les malfaiteurs (Injection code, etc)
+- [x] Sécuriser l'API contre les malfaiteurs (Injection code, etc)
 - [ ] Permettre à l'utilisateur d'entrer des valeurs sans accents
 
 ### Donnons lui du beau :sparkles:
