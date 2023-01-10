@@ -71,7 +71,14 @@ function controlEntry(userRequestCity, cities) {
         onlyNames.push(city['nom']);
     }
 
-    onlyNames = onlyNames.map(city => city.toLowerCase());
+    // onlyNames = onlyNames.map(city => city.toLowerCase());
+    onlyNames = onlyNames.map(city => cancelSpecialLetters(city));
+
+    // *** Debug
+    console.log(onlyNames);
+    console.log(userRequestCity);
+    console.log(onlyNames.includes(userRequestCity.toLowerCase()));
+    // End Debug ***
 
     if (onlyNames.indexOf(userRequestCity.toLowerCase()) === -1) {
         emptyError.classList.remove('d-none');
@@ -80,4 +87,26 @@ function controlEntry(userRequestCity, cities) {
 
     emptyError.classList.add('d-none');
     return userRequestCity;
+}
+
+function cancelSpecialLetters(cityName) {
+    cityName = cityName.toLowerCase();
+    cityName = cityName.replaceAll('à', 'a')
+                       .replaceAll('â', 'a')
+                       .replaceAll('æ', 'a');
+    cityName = cityName.replaceAll('ç', 'c');
+    cityName = cityName.replaceAll('é', 'e')
+                       .replaceAll('è', 'e')
+                       .replaceAll('ê', 'e')
+                       .replaceAll('ë', 'e');
+    cityName = cityName.replaceAll('î', 'i')
+                       .replaceAll('ï', 'i');
+    cityName = cityName.replaceAll('ô', 'o')
+                       .replaceAll('œ', 'o');
+    cityName = cityName.replaceAll('ù', 'u')
+                       .replaceAll('û', 'u')
+                       .replaceAll('ü', 'u');
+    cityName = cityName.replaceAll('ÿ', 'y');
+
+    return cityName;
 }
