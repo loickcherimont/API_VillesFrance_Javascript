@@ -23,6 +23,7 @@ export function countResults() {
 
 }
 
-export function clearPreviousResults() {
+// Empty UI results
+export const uiReset = () => {
     document.getElementById('results').innerHTML = null;
 }
