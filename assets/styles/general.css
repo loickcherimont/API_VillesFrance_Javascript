@@ -1,0 +1,6 @@
+/* Resize search field on tablet or lower screens */
+@media screen and (max-width: 768px)  {
+    #userRequestCity {
+        width: 100%;
+    }
+}
