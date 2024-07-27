@@ -1,7 +1,7 @@
 # API_VillesFrance_Javascript :fr:
 
 <!-- replace this sample image by an app screenshot -->
-![MainImageForProject](https://placehold.co/500x300)
+![Avant gout de l'appli.](/github/main-screen.png)
 
 
 ## :information_source: A propos  
@@ -13,15 +13,51 @@ Objectif : Travailler Javascript avec les API.
 ## :wrench: Outils de développement
 - [API de Découpage Administratif](https://api.gouv.fr/documentation/api-geo)
 - Javascript
-- Bootstrap 5.3.0 (CDN)
+- Bootstrap 5.3.3 (CDN)
+
 
 ### Prérequis
 
-Lancer un projet via un serveur sinon erreur CORS pour l'API
-<!-- explain with more details the line above -->
+Conçu en utilisant les *modules*, pour lancer le projet, il est nécessaire de passer par un serveur
+
+1. Ouvrer un terminal de commandes
+
+2. Entrer les lignes qui suivent
+
+```bash
+npx http-server 
+```
+
+3. Après installation et lancement du serveur, le terminal affiche :
+
+```bash
+Starting up http-server, serving ./
+
+http-server version: 14.1.1
+
+http-server settings: 
+CORS: disabled
+Cache: 3600 seconds
+Connection Timeout: 120 seconds
+Directory Listings: visible
+AutoIndex: visible
+Serve GZIP Files: false
+Serve Brotli Files: false
+Default File Extension: none
+
+Available on:
+  http://127.0.0.1:8080 # Cliquez sur ce lien en maintenant Ctrl enfoncé
+  http://192.168.1.198:8080 # Cliquez sur le lien en maintenant Ctrl enfoncé
+Hit CTRL-C to stop the server
+```
+
+4. Vous êtes sur la page principale!
+
+![Page principale](/github/main-screen.png)
 
 
 ## :inbox_tray: Installation
+
 ### Avec Terminal (Shell Bash) et Git 
 1. Lancer votre terminal
 2. Récupérer le projet dans votre espace de travail avec la commande suivante:
@@ -33,6 +69,7 @@ git clone https://github.com/loickcherimont/API_VillesFrance_Javascript
 cd API_VillesFrance_Javascript
 start index.html
 ```
+
 ### Avec UI
 1. Télécharger le projet en utilisant le bouton `Code` et le dézipper dans un espace de travail
 2. Cliquer sur le dossier proposé et lancer le fichier `index.html`
@@ -46,15 +83,13 @@ start index.html
 
 2. Appuyer sur le bouton de **Recherche**
 
-3. L'application renvoit une ou plusieurs cartes sur la ville recherchée avec quelques informations
+3. L'application renvoie une ou plusieurs cartes sur la ville recherchée avec quelques informations
 
-<!-- replace this sample image by an app screenshot -->
-![ExpectResultsAfterSetup](https://placehold.co/300x200)
+> :information_source: En cas de saisie non valide, l'application renvoie un message d'erreur
 
 
-## :rocket: A venir
-- Régler le soucis CORS !
-- Adapter l'application aux plus petits écrans : tél, tablette, ordi portable
+## :rocket: Fonctionnalités à travailler
+- Ajouter le nom du département
 
 <!-- 
 ### API en elle-même :gear:
@@ -85,4 +120,4 @@ Créé par Loïck CHERIMONT
 
 Sous Licence MIT  
 
-Dernière édition : 2024-07-25
+Dernière édition : 2024-07-27
